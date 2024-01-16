@@ -1,0 +1,21 @@
+Script started on 2024-01-16 16:23:44+02:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="100" LINES="36"]
+[?2004h]0;tero@home-ubuntu: ~/dev/web/react/FSO/part12[01;32mtero@home-ubuntu[00m:[01;34m~/dev/web/react/FSO/part12[00m$ (reverse-i-search)`': [Kd': [7md[27mocker container run -it ubuntu bash[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@o': [7mdo[27m[1@c': [7mdoc[27m]0;tero@home-ubuntu: ~/dev/web/react/FSO/part12[01;32mtero@home-ubuntu[00m:[01;34m~/dev/web/react/FSO/part12[00m$ docker container run -it ubuntu bash[C
+[?2004l[?2004h]0;root@439fb9b8f48a: /root@439fb9b8f48a:/# ls
+[?2004l[0m[01;36mbin[0m   [01;34mdev[0m  [01;34mhome[0m  [01;36mlib32[0m  [01;36mlibx32[0m  [01;34mmnt[0m  [01;34mproc[0m  [01;34mrun[0m   [01;34msrv[0m  [30;42mtmp[0m  [01;34mvar[0m
+[01;34mboot[0m  [01;34metc[0m  [01;36mlib[0m   [01;36mlib64[0m  [01;34mmedia[0m   [01;34mopt[0m  [01;34mroot[0m  [01;36msbin[0m  [01;34msys[0m  [01;34musr[0m
+[?2004h]0;root@439fb9b8f48a: /root@439fb9b8f48a:/# cd usr/
+[?2004l[?2004h]0;root@439fb9b8f48a: /usrroot@439fb9b8f48a:/usr# ls
+[?2004l[0m[01;34mbin[0m  [01;34mgames[0m  [01;34minclude[0m  [01;34mlib[0m  [01;34mlib32[0m  [01;34mlib64[0m  [01;34mlibexec[0m  [01;34mlibx32[0m  [01;34mlocal[0m  [01;34msbin[0m  [01;34mshare[0m  [01;34msrc[0m
+[?2004h]0;root@439fb9b8f48a: /usrroot@439fb9b8f48a:/usr# cd src/
+[?2004l[?2004h]0;root@439fb9b8f48a: /usr/srcroot@439fb9b8f48a:/usr/src# ls
+[?2004l[?2004h]0;root@439fb9b8f48a: /usr/srcroot@439fb9b8f48a:/usr/src# mkdir app
+[?2004l[?2004h]0;root@439fb9b8f48a: /usr/srcroot@439fb9b8f48a:/usr/src# cd app/
+[?2004l[?2004h]0;root@439fb9b8f48a: /usr/src/approot@439fb9b8f48a:/usr/src/app# m touch index.js
+[?2004l[?2004h]0;root@439fb9b8f48a: /usr/src/approot@439fb9b8f48a:/usr/src/app# ls
+[?2004lindex.js
+[?2004h]0;root@439fb9b8f48a: /usr/src/approot@439fb9b8f48a:/usr/src/app# exit
+[?2004lexit
+[?2004h]0;tero@home-ubuntu: ~/dev/web/react/FSO/part12[01;32mtero@home-ubuntu[00m:[01;34m~/dev/web/react/FSO/part12[00m$ exit
+[?2004lexit
+
+Script done on 2024-01-16 16:24:19+02:00 [COMMAND_EXIT_CODE="0"]
