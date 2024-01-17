@@ -21,8 +21,12 @@ const singleRouter = express.Router();
 
 const findByIdMiddleware = async (req, res, next) => {
   const { id } = req.params
-  req.todo = await Todo.findById(id)
-  if (!req.todo) return res.sendStatus(404)
+  try {
+    req.todo = await Todo.findById(id)
+    if (!req.todo) return res.sendStatus(404)
+  } catch (error) {
+    return res.status(400).json({ error: error.message });
+  }
 
   next()
 }
@@ -34,13 +38,25 @@ singleRouter.delete('/', async (req, res) => {
 });
 
 /* GET todo. */
-singleRouter.get('/', async (req, res) => {
-  res.sendStatus(405); // Implement this
+singleRouter.get('/', async (req, res) => {  
+  res.send(req.todo);
 });
 
 /* PUT todo. */
 singleRouter.put('/', async (req, res) => {
-  res.sendStatus(405); // Implement this
+  const { todo } = req;
+  const { text, done } = req.body;
+  if (text === undefined && done === undefined) {
+    res.status(400).end();
+  }
+  if (text !== undefined) {
+    todo.text = text;
+  }
+  if (done !== undefined) {
+    todo.done = done;
+  }
+  await todo.save()
+  res.status(204).end();
 });
 
 router.use('/:id', findByIdMiddleware, singleRouter)
