@@ -7,6 +7,7 @@ let getAsync
 let setAsync
 
 const initializeRedis = async () => {
+  return;
   const added_todos = await Todo.countDocuments({});
   await setAsync('added_todos', added_todos);
 };
