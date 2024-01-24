@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app:
+    image: phonebook-app-dev
+    build:
+      context: ./app
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./app/src:/usr/src/app/src
+  server:
+    image: phonebook-server-dev
+    build:
+      context: ./server
+      dockerfile: dev.Dockerfile
+    environment:
+      - MONGODB_URL=mongodb://db_user:db_user_password@mongo:27017/phonebookDB
+    volumes:
+      - ./server/src:/usr/src/app/src
+      - ./server/index.js:/usr/src/app/index.js
+  mongo:
+    image: mongo:6.0.11
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: the_database
+    volumes:
+      - ./server/src/mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:

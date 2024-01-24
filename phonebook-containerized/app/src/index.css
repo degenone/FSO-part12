@@ -1,0 +1,16 @@
+.notification {
+    color: green;
+    border: 0.4rem solid;
+    border-radius: 0.5rem;
+    background-color: lightgrey;
+    margin-block-end: 0.75rem;
+    padding: 0.5rem 1rem;
+}
+
+.error {
+    color: red;
+}
+
+label {
+    margin-inline-end: 0.5rem;
+}
