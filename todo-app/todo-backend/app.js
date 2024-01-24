@@ -14,6 +14,6 @@ app.use(express.json());
 
 app.use('/', indexRouter);
 app.use('/todos', todosRouter);
-app.use('/health', (req, res) => res.send('ok'));
+app.use('/health', (req, res) => res.send('Health: Ok'));
 
 module.exports = app;
