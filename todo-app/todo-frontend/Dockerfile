@@ -2,7 +2,7 @@ FROM node:20 as base
 
 WORKDIR /usr/src/app
 
-ENV REACT_APP_BACKEND_URL=http://localhost:3000/
+ENV REACT_APP_BACKEND_URL=http://localhost:8080/api/
 
 FROM base as test
 
@@ -18,6 +18,8 @@ COPY --from=test /usr/src/app /usr/src/app
 
 RUN npm run build
 
-FROM nginx:1.20-alpine
+RUN npm install -g serve
 
-COPY --from=build /usr/src/app/build /usr/share/nginx/html
+EXPOSE 3001
+
+CMD ["serve", "build", "-l", "3001"]
