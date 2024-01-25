@@ -8,6 +8,10 @@ services:
       dockerfile: dev.Dockerfile
     volumes:
       - ./app/src:/usr/src/app/src
+      - ./app/vite.config.js:/usr/src/app/vite.config.js
+    container_name: phonebook-app-dev
+    environment:
+      - VITE_SERVER_URL=http://localhost:8080/api/persons
   server:
     image: phonebook-server-dev
     build:
@@ -18,15 +22,27 @@ services:
     volumes:
       - ./server/src:/usr/src/app/src
       - ./server/index.js:/usr/src/app/index.js
+    container_name: phonebook-server-dev
   mongo:
     image: mongo:6.0.11
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
-      MONGO_INITDB_DATABASE: the_database
+      MONGO_INITDB_DATABASE: phonebookDB
     volumes:
       - ./server/src/mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
       - mongo_data:/data/db
+    container_name: phonebook-mongo
+  reverse-proxy:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: phonebook-reverse-proxy
+    depends_on:
+      - app
+      - server
 
 volumes:
   mongo_data:

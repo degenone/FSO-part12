@@ -1,16 +1,6 @@
 const mongoose = require('mongoose');
 
-const URL = process.env.MONGODB_URL;
 const NUMBER_RE = /\d{3}[\s-]\d{3}[\s-]\d{4}/;
-
-mongoose.set('strictQuery', false);
-
-console.log('connecting...');
-
-mongoose
-    .connect(URL)
-    .then(() => console.log('Connected to mongoDB.'))
-    .catch((e) => console.log('[ERR] mongoDB connection failed', e.message));
 
 const personSchema = new mongoose.Schema({
     name: {
