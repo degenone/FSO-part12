@@ -1,4 +1,4 @@
-# My answers for the exercises in part 10 of Full Stack Open
+# My answers for the exercises in part 12 of Full Stack Open
 
 - [1](https://fullstackopen.com/en/part12/introduction_to_containers#exercise-12-1)
 - [2](https://fullstackopen.com/en/part12/introduction_to_containers#exercise-12-2)
